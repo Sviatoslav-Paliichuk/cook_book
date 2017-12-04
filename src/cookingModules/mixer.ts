@@ -1,18 +1,18 @@
-import moduleInterface from '../common/interfaces/module'
-import storageModule from '../storageModules/storageModule'
+import ModuleInterface from '../common/interfaces/module'
+import Ingredient from "../ingredients/ingredient";
 
-export default class MixerModule implements moduleInterface{
+export default class MixerModule implements ModuleInterface{
     name: string;
 
-    constructor(name: string){
-        this.name = name;
+    constructor(){
+        this.name = MixerModule.name;
     }
 
     getIngredient(name: string, amount: number){
 
     }
 
-    loadIngredient(name: string, amount: number){
+    loadIngredient(ingredient: Ingredient){
 
     }
 

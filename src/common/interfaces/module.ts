@@ -1,9 +1,7 @@
 import Ingredient from "../../ingredients/ingredient";
 
-export default interface moduleInterface {
+export default interface ModuleInterface {
     name: string,
     getIngredient(name: string, amount: number),
     loadIngredient(ingredient: Ingredient)
-
-    // TODO should return Ingredient
 }

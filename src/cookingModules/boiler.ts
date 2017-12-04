@@ -1,12 +1,12 @@
-import moduleInterface from '../common/interfaces/module'
+import ModuleInterface from '../common/interfaces/module'
 import Ingredient from "../ingredients/ingredient";
 
-export default class BoilerModule implements moduleInterface{
+export default class BoilerModule implements ModuleInterface{
     name: string;
     prepearedIngredient: Ingredient;
 
-    constructor(name: string){
-        this.name = name;
+    constructor(){
+        this.name = BoilerModule.name;
     }
 
     getIngredient(name: string, amount: number){

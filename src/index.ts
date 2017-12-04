@@ -2,7 +2,7 @@
 //IT'S JUST A PROTOTYPE AND WAS CREATED TO SHOW POSSIBLE
 //COOK BOOK AND RECEIPTS STRUCTURE.
 import Core from './core/core';
-import recipeInterface from './common/interfaces/recipe';
+import RecipeInterface from './common/interfaces/recipe';
 import BoilerModule from './cookingModules/boiler';
 import MixerModule from './cookingModules/mixer';
 
@@ -17,8 +17,8 @@ const recipesList:string[] = core.cookBook.getRecipesList();
 let availableOptions:{} = {};
 const optionsFormEl = document.getElementById('options_container');
 
-core.plugModule(new BoilerModule('boiler'));
-core.plugModule(new MixerModule('mixer'));
+core.plugModule(new BoilerModule());
+core.plugModule(new MixerModule());
 
 recipesList.forEach((recipeName:string) => {
 

@@ -1,5 +1,5 @@
-import recipeInterface from '../common/interfaces/recipe';
-import recipeStep from '../common/interfaces/recipeStep';
+import RecipeInterface from '../common/interfaces/recipe';
+import RecipeStep from '../common/interfaces/recipeStep';
 
 export interface SteakOptions {
     cookingLevel: string,
@@ -11,11 +11,15 @@ interface SteakAvailableOptions {
     sause: [string]
 }
 
-export default class Steak implements recipeInterface {
+export default class Steak implements RecipeInterface {
     public title = 'Steak';
     availableOptions:SteakAvailableOptions = {
         cookingLevel: ['rare', 'medium rare', 'well done'],
         sause: ['bbq', 'blue cheese']
+    };
+
+    isAvailable(modules, ingredients) {
+        // do logic here based on steps requirements such as module, ingredients, so on
     }
 
     buildReceipSequence(options:SteakOptions):[object] {

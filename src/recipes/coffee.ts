@@ -1,4 +1,4 @@
-import recipeInterface from '../common/interfaces/recipe';
+import RecipeInterface from '../common/interfaces/recipe';
 
 interface CoffeeOptions {
     type: string,
@@ -12,13 +12,17 @@ interface CoffeeAvailableOptionsProp {
     size: string[]
 }
 
-export default class Steak implements recipeInterface {
+export default class Steak implements RecipeInterface {
     public title = 'Coffee';
     availableOptions:CoffeeAvailableOptionsProp = {
         type: ['espresso', 'americano', 'latte'],
         sweetness: ['no sugar', 'sweet', 'extra sweet'],
         size: ['small', 'medium', 'big']
     };
+
+    isAvailable(modules, ingredients) {
+        // do logic here based on steps requirements such as module, ingredients, so on
+    }
 
     buildReceipSequence(options: CoffeeOptions) {
         const {
@@ -60,10 +64,10 @@ export default class Steak implements recipeInterface {
 
         let cookingSequence:[object] = [{
             ingredients:  {
-               milk: milkCoef * 50 * sizeNumber,
-               water: waterCoef * 100 * sizeNumber,
-               sugar: sugarCoef * (this.availableOptions.sweetness.indexOf(sweetness)) * sizeNumber,
-               coffee: coffeeCoef * 10 * sizeNumber
+                milk: milkCoef * 50 * sizeNumber,
+                water: waterCoef * 100 * sizeNumber,
+                sugar: sugarCoef * (this.availableOptions.sweetness.indexOf(sweetness)) * sizeNumber,
+                coffee: coffeeCoef * 10 * sizeNumber
             },
             operation: 'coffeMachine',
             options: {
